@@ -124,8 +124,7 @@ async function run() {
       res.send(result);
     })
 
-    // menu related api
-
+    // MENU related api
     app.get('/menu', async (req, res) => {
       const result = await menuCollection.find().toArray();
       res.send(result);
@@ -137,7 +136,7 @@ async function run() {
     })
 
 
-    //carts collection
+    //CARTS collection
     app.post('/carts', async (req, res) => {
       const cartItem = req.body;
       const result = await cartCollection.insertOne(cartItem);
