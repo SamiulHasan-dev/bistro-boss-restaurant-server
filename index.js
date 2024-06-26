@@ -6,10 +6,12 @@ require('dotenv').config();
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const port = process.env.PORT || 5000;
 
+
 //middleware
 app.use(cors());
 app.use(express.json());
 
+//link to database 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.qdflpzq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
@@ -40,8 +42,6 @@ async function run() {
     })
 
 
-
-    
     //middleware
     const verifyToken = (req, res, next) => {
       console.log('inside verify tokens', req.headers.authorization);
